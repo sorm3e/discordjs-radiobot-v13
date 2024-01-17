@@ -17,8 +17,8 @@ const radio = require(`./botconfig/radiostation.json`);
 
 client.once(Discord.Events.ClientReady, () => {
   console.log(`Logged in as ${client.user.tag}`);
-  client.user.setActivity("Coded By : Hesam TooVinS", {
-    type: Discord.ActivityType.Listening,
+  client.user.setActivity("Coded By : Maj🐸", {
+    type: Discord.ActivityType.COMPETING,
   }); //You can change type to : LISTENING , COMPETING , PLAYING
 });
 
@@ -45,10 +45,10 @@ client.on(Discord.Events.MessageCreate, async (message) => {
           inline: true,
         },
         { name: `${prefix}reset`, value: "Restart Bot", inline: true },
-        { name: `${prefix}dc`, value: "Disconnect Bot", inline: true }
+        { name: `${prefix}dc`, value: "Disconnect Bot", inline: true },
       )
       .setThumbnail(
-        `https://play-lh.googleusercontent.com/oV1AVbkOV2M7rqOAENeuNAnBL6ftRpECFDiiKU4w19tX_rTHTnwJRrPcJ2yy270taMU`
+        `https://play-lh.googleusercontent.com/oV1AVbkOV2M7rqOAENeuNAnBL6ftRpECFDiiKU4w19tX_rTHTnwJRrPcJ2yy270taMU`,
       )
       .setFooter({
         text: `Requested By ${message.author.username}`,
@@ -164,7 +164,7 @@ client.on(Discord.Events.MessageCreate, async (message) => {
       return message.reply({
         content: `:x: **You Dont Have permission to use this command! , you need <@&${role}> role**`,
       });
-     connection.destroy();
+    connection.destroy();
     message.reply({ content: "✅ **Bot was successfully Disconnected** " });
   }
   // bot stats
@@ -184,7 +184,7 @@ client.on(Discord.Events.MessageCreate, async (message) => {
         {
           name: ":file_cabinet: Memory",
           value: `┕\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(
-            2
+            2,
           )}mb\``,
           inline: true,
         },
@@ -202,7 +202,7 @@ client.on(Discord.Events.MessageCreate, async (message) => {
           name: ":green_book: Node",
           value: `┕\`${process.version}\``,
           inline: true,
-        }
+        },
       )
       .setColor("Green")
       .setFooter({
@@ -222,5 +222,5 @@ client.login(token);
 
 /**********************************************************
  * @INFO
- * Bot Coded by hesam TooVinS#5284| https://discord.gg/Jhnqm5BHnt
+ * Bot Coded by Maj🐸| https://discord.gg/pJeWY97aFD
  *********************************************************/
